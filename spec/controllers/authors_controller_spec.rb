@@ -24,7 +24,7 @@ RSpec.describe AuthorsController, type: :controller do
   # Author. As you add validations to Author, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { first_name: 'Ana', last_name: 'Gil', email: 'me@mail.com', phone: '663773113', city: 'Lugo' }
   }
 
   let(:invalid_attributes) {

@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'hamlit-rails'
 
+group :test do
+  gem 'rails-controller-testing'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
