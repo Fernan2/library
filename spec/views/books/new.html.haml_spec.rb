@@ -2,16 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "books/new", type: :view do
   before(:each) do
-    assign(:book, Book.new(
-      :title => "MyString",
-      :author => nil,
-      :description => "MyString",
-      :year => 1,
-      :available => false,
-      :section => "MyString",
-      :shelf => 1,
-      :order => 1
-    ))
+    assign(:book, FactoryGirl.build(:book))
   end
 
   it "renders new book form" do
@@ -21,7 +12,7 @@ RSpec.describe "books/new", type: :view do
 
       assert_select "input#book_title[name=?]", "book[title]"
 
-      assert_select "input#book_author_id[name=?]", "book[author_id]"
+      assert_select('select#book_author_id option[selected]').first['value']
 
       assert_select "input#book_description[name=?]", "book[description]"
 
