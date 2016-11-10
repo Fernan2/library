@@ -24,11 +24,11 @@ RSpec.describe BooksController, type: :controller do
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { author_id: FactoryGirl.create(:author).id }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { author_id: '' }
   }
 
   # This should return the minimal set of values that should be in the session
