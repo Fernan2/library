@@ -22,6 +22,8 @@
   %b Website:
   = @author.website
 
+%p= link_to 'See books!', author_books_path(@author)
+
 = link_to 'Edit', edit_author_path(@author)
 \|
 = link_to 'Back', authors_path
