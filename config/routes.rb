@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'about-us' => 'web#about_us', as: 'web_about_us'
 
-  get 'web/search'
+  post 'web/search'
 
   root to: 'web#home'
 
