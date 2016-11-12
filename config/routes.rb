@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'web/home' => redirect('/')
 
-  get 'web/about_us'
+  get 'about-us' => 'web#about_us', as: 'web_about_us'
 
   get 'web/search'
 
