@@ -23,12 +23,13 @@ RSpec.describe BooksController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
+  let(:author) { FactoryGirl.create(:author) }
   let(:valid_attributes) {
-    { author_id: FactoryGirl.create(:author).id }
+    { author_id: author.id }
   }
 
   let(:invalid_attributes) {
-    { author_id: '' }
+    skip("Add a hash of attributes invalid for your model")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -39,7 +40,7 @@ RSpec.describe BooksController, type: :controller do
   describe "GET #index" do
     it "assigns all books as @books" do
       book = Book.create! valid_attributes
-      get :index, params: {}, session: valid_session
+      get :index, params: { author_id: author.id }, session: valid_session
       expect(assigns(:books)).to eq([book])
     end
   end
@@ -54,7 +55,7 @@ RSpec.describe BooksController, type: :controller do
 
   describe "GET #new" do
     it "assigns a new book as @book" do
-      get :new, params: {}, session: valid_session
+      get :new, params: { author_id: author.id }, session: valid_session
       expect(assigns(:book)).to be_a_new(Book)
     end
   end
@@ -71,25 +72,25 @@ RSpec.describe BooksController, type: :controller do
     context "with valid params" do
       it "creates a new Book" do
         expect {
-          post :create, params: {book: valid_attributes}, session: valid_session
+          post :create, params: { author_id: author.id, book: valid_attributes }, session: valid_session
         }.to change(Book, :count).by(1)
       end
 
       it "assigns a newly created book as @book" do
-        post :create, params: {book: valid_attributes}, session: valid_session
+        post :create, params: { author_id: author.id, book: valid_attributes }, session: valid_session
         expect(assigns(:book)).to be_a(Book)
         expect(assigns(:book)).to be_persisted
       end
 
       it "redirects to the created book" do
-        post :create, params: {book: valid_attributes}, session: valid_session
+        post :create, params: { author_id: author.id, book: valid_attributes }, session: valid_session
         expect(response).to redirect_to(Book.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved book as @book" do
-        post :create, params: {book: invalid_attributes}, session: valid_session
+        post :create, params: { author_id: author.id, book: invalid_attributes }, session: valid_session
         expect(assigns(:book)).to be_a_new(Book)
       end
 

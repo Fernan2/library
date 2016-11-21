@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "books/index", type: :view do
+  let(:author) { FactoryGirl.create(:author) }
   before(:each) do
+    assign(:author, author)
     assign(:books, [
       Book.create!(
         :title => "Title",
-        :author => FactoryGirl.create(:author),
+        :author => author,
         :description => "Description",
         :year => 2,
         :available => false,
@@ -15,7 +17,7 @@ RSpec.describe "books/index", type: :view do
       ),
       Book.create!(
         :title => "Title",
-        :author => FactoryGirl.create(:author),
+        :author => author,
         :description => "Description",
         :year => 2,
         :available => false,

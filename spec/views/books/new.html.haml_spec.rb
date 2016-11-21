@@ -12,8 +12,6 @@ RSpec.describe "books/new", type: :view do
 
       assert_select "input#book_title[name=?]", "book[title]"
 
-      assert_select('select#book_author_id option[selected]').first['value']
-
       assert_select "input#book_description[name=?]", "book[description]"
 
       assert_select "input#book_year[name=?]", "book[year]"
