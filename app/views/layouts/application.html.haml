@@ -1,7 +1,8 @@
 !!!
 %html
   %head
-    %title Library
+    %title
+      = yield(:title)
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -12,6 +13,7 @@
       %li= link_to 'Home', web_home_path
       %li= link_to 'About us', web_about_us_path
       %li= link_to 'Root', root_path
+    = yield(:presearch)
     %p
       = form_tag web_search_path do
         = text_field_tag :text_to_search
