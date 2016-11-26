@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  belongs_to :author, optional: true
+  belongs_to :author, optional: true, counter_cache: true
   validates :author, presence: { if: :new_data? }
 
   private
