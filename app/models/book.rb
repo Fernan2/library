@@ -17,6 +17,10 @@ class Book < ApplicationRecord
     return if price.nil?
     price * (100 + BOOK_VAT) / 100
   end
+  
+  def reviews_count
+    reviews.count
+  end
 
   private
 
