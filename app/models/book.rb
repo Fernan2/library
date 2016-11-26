@@ -6,6 +6,9 @@ class Book < ApplicationRecord
   scope :with_title, -> { where.not(title: nil) }
   scope :newer_than, ->(year) { where('year >= ?', year) }
 
+  delegate :first_name, to: :author, prefix: true
+  delegate :created_at, to: :author, prefix: true
+
   private
 
   def new_data?
