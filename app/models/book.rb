@@ -9,6 +9,15 @@ class Book < ApplicationRecord
   delegate :first_name, to: :author, prefix: true
   delegate :created_at, to: :author, prefix: true
 
+  attr_accessor :price
+
+  BOOK_VAT = 10
+
+  def price_with_vat
+    return if price.nil?
+    price * (100 + BOOK_VAT) / 100
+  end
+
   private
 
   def new_data?
