@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   has_many :reviews, as: :reviewable
-  belongs_to :author, optional: true, counter_cache: true
+  belongs_to :author, optional: true, counter_cache: true, touch: true
   validates :author, presence: { if: :new_data? }
 
   before_create :update_author_name
