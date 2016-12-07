@@ -217,3 +217,9 @@ es_ES:
       author:
         one: Autor
         other: Autores
+    attributes:
+      author:
+        first_name: Nombre
+        last_name: Apellidos
+        email: e-mail
+        phone: Teléfono

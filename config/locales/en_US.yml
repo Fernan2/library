@@ -211,3 +211,7 @@ en_US:
       long: "%B %d, %Y %I:%M %p"
       short: "%d %b %I:%M %p"
     pm: pm
+  activerecord:
+    attributes:
+      author:
+        email: e-mail
