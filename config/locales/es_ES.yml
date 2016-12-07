@@ -212,3 +212,8 @@ es_ES:
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
     pm: pm
+  activerecord:
+    models:
+      author:
+        one: Autor
+        other: Autores
