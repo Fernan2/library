@@ -156,4 +156,13 @@ RSpec.describe AuthorsController, type: :controller do
     end
   end
 
+  describe 'redirect authors' do
+    let(:old_author) { 14 }
+    let(:new_author) { 7 }
+
+    it 'should redirect a request to the old to a request to the new' do
+      get :show, id: old_author
+      expect(response).to redirect_to(author_path(new_author))
+    end
+  end
 end
