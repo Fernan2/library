@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'hamlit-rails'
 gem 'browser'
+gem 'draper', '3.0.0.pre1'
 
 group :test do
   gem 'rails-controller-testing'
