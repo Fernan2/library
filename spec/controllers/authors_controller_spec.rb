@@ -157,8 +157,9 @@ RSpec.describe AuthorsController, type: :controller do
   end
 
   describe 'redirect authors' do
-    let(:old_author) { 14 }
+    let(:old_author) { '142' }
     let(:new_author) { 7 }
+    before { stub_const('Author::REDIRECTED_AUTHORS', { old_author => new_author }) }
 
     it 'should redirect a request to the old to a request to the new' do
       get :show, id: old_author
