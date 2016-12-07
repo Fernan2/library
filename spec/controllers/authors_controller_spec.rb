@@ -166,4 +166,11 @@ RSpec.describe AuthorsController, type: :controller do
       expect(response).to redirect_to(author_path(new_author))
     end
   end
+
+  context 'with a nonexisting id' do
+    it 'should return not_found status' do
+      get :show, id: 987654321
+      expect(response.status).to eq(404)
+    end
+  end
 end

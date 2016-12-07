@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def render_404
-    render 'web/404'
+    render 'web/404', status: 404
   end
 
   def set_variant
