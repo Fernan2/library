@@ -211,6 +211,7 @@ es_ES:
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
+      shorter: "%H:%M"
     pm: pm
   activerecord:
     models:
@@ -223,3 +224,4 @@ es_ES:
         last_name: Apellidos
         email: e-mail
         phone: Teléfono
+  welcome: ¡Bienvenido!

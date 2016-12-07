@@ -210,8 +210,10 @@ en_US:
       default: "%a, %d %b %Y %I:%M:%S %p %Z"
       long: "%B %d, %Y %I:%M %p"
       short: "%d %b %I:%M %p"
+      shorter: "%H-%M"
     pm: pm
   activerecord:
     attributes:
       author:
         email: e-mail
+  welcome: Welcome!
