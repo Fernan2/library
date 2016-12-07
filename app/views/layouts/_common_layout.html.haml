@@ -1,0 +1,11 @@
+= yield(:presearch)
+%p
+  = form_tag web_search_path do
+    = text_field_tag :text_to_search
+    = submit_tag 'Search'
+= yield
+
+%p
+  Locale: #{I18n.locale}
+  = I18n.localize Time.current, format: :shorter
+- console if Rails.env.development?
