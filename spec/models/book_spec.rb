@@ -56,4 +56,15 @@ RSpec.describe Book, type: :model do
       end
     end
   end
+
+  describe 'author_name' do
+    let(:author) { FactoryGirl.create(:author, first_name: 'Foo', last_name: 'Bar') }
+    let(:book) { FactoryGirl.build(:book, author: author) }
+
+    it 'should update author_name when saving' do
+      book.save
+      expect(book.reload.author_name).to eq('Foo Bar')
+    end
+
+  end
 end
