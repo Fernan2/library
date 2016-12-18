@@ -16,5 +16,6 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] if params[:locale]
+    @country = Country.find_by!(code: I18n.locale)
   end
 end
